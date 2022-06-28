@@ -3,12 +3,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%@ include file="cdn.html"%>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Accesso negato</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<h1>TEST</h1>
 	
-	<!-- CIAO BELLI -->
+	<footer>
+		<%@ include file="footer.html"%>
+	</footer>
 </body>
 </html>
