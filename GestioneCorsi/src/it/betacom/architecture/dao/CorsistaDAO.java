@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
@@ -130,59 +129,7 @@ public class CorsistaDAO extends AdapterDAO<Corsista> implements DAOConstants {
 
 	@Override
 	public Corsista[] searchCorsista(Connection conn, String query) throws DAOException {
-		
-		try {
-			ArrayList<Corsista> lista = new ArrayList<Corsista>();
-
-			String[] criterioDiRicerca = query.toLowerCase().split(" ");
-			
-			if(criterioDiRicerca.length == 1) {
-				PreparedStatement pr = conn.prepareStatement(SEARCH_CORSISTA);
-				
-				for(int i = 1; i <= 2; i++) {
-					
-					pr.setString(i, criterioDiRicerca[0]);
-					
-					if(i == 1)
-						pr.setString(2, "");
-					else
-						pr.setString(1, "");
-					
-					ResultSet rs = pr.executeQuery();
-					rs.next();
-					
-					Corsista cor = new Corsista();
-					cor.setCodCorsista(rs.getLong(1));
-					cor.setNomeCorsista(rs.getString(2));
-					cor.setCognomeCorsista(rs.getString(3));
-					cor.setPrecedentiFormativi(rs.getInt(4));
-					
-					lista.add(cor);
-				}
-				
-			} else {
-				PreparedStatement pr = conn.prepareStatement(SEARCH_CORSISTA);
-				
-				pr.setString(1, criterioDiRicerca[0]);
-				pr.setString(2, criterioDiRicerca[1]);
-				
-				ResultSet rs = pr.executeQuery();
-				rs.next();
-				
-				Corsista cor = new Corsista();
-				cor.setCodCorsista(rs.getLong(1));
-				cor.setNomeCorsista(rs.getString(2));
-				cor.setCognomeCorsista(rs.getString(3));
-				cor.setPrecedentiFormativi(rs.getInt(4));
-				
-				lista.add(cor);
-			}
-
-			Corsista[] corsisti = lista.toArray(new Corsista[lista.size()]);
-
-			return corsisti;
-		} catch(SQLException sql) {
-			throw new DAOException(sql);
-		}
+		// TODO Auto-generated method stub
+		return super.searchCorsista(conn, query);
 	}
 }
