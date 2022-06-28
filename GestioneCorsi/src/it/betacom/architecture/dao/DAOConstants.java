@@ -33,17 +33,24 @@ public interface DAOConstants {
 	String SELECT_CORSO_SEQ = "select corso_seq.nextval from dual";
 
 	String SELECT_CORSISTA_SEQ = "select corsista_seq.nextval from dual";
+	
+	String SELECT_DOCENTI = "select * from docente";
+	
 
 
 	String DELETE_CORSO = "delete from corso where cod_corso = ?";
 
 	String DELETE_CORSISTA = "delete from corso where cod_corsista = ?";
 
-	String DELETE_CORSISTA_CORSO = "";
+	String DELETE_CORSISTA_CORSO = "delete from corsista_corso where cod_corso = ? and cod_corsista = ?";
+	
+		
+	String DELETE_DOCENTE = "delete from docente where cod_docente = ?";
 
-
-	String UPDATE_CORSO = "";
+	String UPDATE_CORSO = "update corso set datainizio = ?, datafine = ?, costocorso = ?, commenticorso = ?, aulacorso = ? where cod_corso = ?";
 
 	String UPDATE_CORSISTA = "update corsista set nomecorsista = ?, cognomecorsista = ?, precedentiformativi = ? where cod_corsista = ?";
+	
+	
 
 }
