@@ -27,7 +27,7 @@ public interface DAOConstants {
 
 	String SELECT_CORSISTA_CORSO = "select * from corsista_corso";
 	
-	String SEARCH_CORSISTA = "select * from corsista where LOWER(nomecorsista) like '%'||?||'%' and LOWER(cognomecorsista) like '%'||?||'%'";
+	String SEARCH_CORSISTA = "select * from corsista where LOWER(nomecorsista) like '%'||?||'%' or LOWER(cognomecorsista) like '%'||?||'%'";
 
 
 	String SELECT_CORSO_SEQ = "select corso_seq.nextval from dual";
@@ -40,7 +40,7 @@ public interface DAOConstants {
 
 	String DELETE_CORSO = "delete from corso where cod_corso = ?";
 
-	String DELETE_CORSISTA = "delete from corso where cod_corsista = ?";
+	String DELETE_CORSISTA = "delete from corsista where cod_corsista = ?";
 
 	String DELETE_CORSISTA_CORSO = "delete from corsista_corso where cod_corso = ? and cod_corsista = ?";
 	
