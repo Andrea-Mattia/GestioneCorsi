@@ -12,7 +12,7 @@ public abstract class AdapterDAO<T> implements GenericDAO<T>{
 	}
 	
 	@Override
-	public void update(Connection conn, T Entity) throws DAOException {
+	public void update(Connection conn, T entity) throws DAOException {
 		
 	}
 	
@@ -35,5 +35,9 @@ public abstract class AdapterDAO<T> implements GenericDAO<T>{
 		return null;
 	}
 	
+	
+	public T[] searchCorsista(Connection conn, String query) throws DAOException {
+		return null;
+	}
 }
 

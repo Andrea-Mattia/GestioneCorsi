@@ -26,6 +26,8 @@ public interface DAOConstants {
 	String SELECT_CORSO = "select * from corso";
 
 	String SELECT_CORSISTA_CORSO = "select * from corsista_corso";
+	
+	String SEARCH_CORSISTA = "select * from corsista where LOWER(nomecorsista) like '%'||?||'%' and LOWER(cognomecorsista) like '%'||?||'%'";
 
 
 	String SELECT_CORSO_SEQ = "select corso_seq.nextval from dual";
@@ -42,6 +44,6 @@ public interface DAOConstants {
 
 	String UPDATE_CORSO = "";
 
-	String UPDATE_CORSISTA = "";
+	String UPDATE_CORSISTA = "update corsista set nomecorsista = ?, cognomecorsista = ?, precedentiformativi = ? where cod_corsista = ?";
 
 }
