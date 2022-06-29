@@ -34,8 +34,8 @@ public class CorsoDAO extends AdapterDAO<Corso> implements DAOConstants{
 			rowSet.execute(conn);
 			
 			rowSet.moveToInsertRow();
-			rowSet.updateInt(1, entity.getCod_corso());
-			rowSet.updateInt(2, entity.getCod_docente());
+			rowSet.updateInt(1, entity.getCodCorso());
+			rowSet.updateInt(2, entity.getCodDocente());
 			rowSet.updateString(3, entity.getNomeCorso());
 			rowSet.updateDate(4, new java.sql.Date(entity.getDataInizio().getTime()));
 			rowSet.updateDate(5, new java.sql.Date(entity.getDataFine().getTime()));
@@ -63,7 +63,7 @@ public class CorsoDAO extends AdapterDAO<Corso> implements DAOConstants{
 			ps.setDouble(3, entity.getCostoCorso());
 			ps.setString(4, entity.getCommentiCorso());
 			ps.setString(5, entity.getAulaCorso());
-			ps.setInt(6, entity.getCod_corso());
+			ps.setInt(6, entity.getCodCorso());
 			
 			ps.execute();
 
@@ -111,8 +111,8 @@ public class CorsoDAO extends AdapterDAO<Corso> implements DAOConstants{
 			
 			for(int i = 0; rs.next(); i++) {
 				Corso c = new Corso();
-				c.setCod_corso(rs.getInt(1));
-				c.setCod_docente(rs.getInt(2));
+				c.setCodCorso(rs.getInt(1));
+				c.setCodDocente(rs.getInt(2));
 				c.setNomeCorso(rs.getString(3));
 				c.setDataInizio(new java.util.Date(rs.getDate(4).getTime()));
 				c.setDataFine(new java.util.Date(rs.getDate(5).getTime()));
