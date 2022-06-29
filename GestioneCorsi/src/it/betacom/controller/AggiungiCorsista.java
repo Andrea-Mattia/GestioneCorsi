@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import it.betacom.businesscomponent.facade.AdminFacade;
 import it.betacom.businesscomponent.model.Corsista;
 
 @WebServlet("/aggiungiCorsista")
@@ -22,7 +23,7 @@ public class AggiungiCorsista extends HttpServlet {
 			c.setCognomeCorsista(request.getParameter("cognome"));
 			c.setPrecedentiFormativi(Integer.parseInt(request.getParameter("precedentiFormativi")));
 			AdminFacade aF = AdminFacade.getIstance();
-			aF.createCorsista(corsista);
+			aF.createCorsista(c);
 			response.sendRedirect("home.jsp");
 		} catch (Exception exc) {
 			exc.printStackTrace();
