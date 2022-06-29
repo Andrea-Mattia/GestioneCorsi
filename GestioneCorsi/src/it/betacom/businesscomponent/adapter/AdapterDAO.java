@@ -1,4 +1,4 @@
-package it.betacom.businesscomponent;
+package it.betacom.businesscomponent.adapter;
 
 import java.sql.Connection;
 

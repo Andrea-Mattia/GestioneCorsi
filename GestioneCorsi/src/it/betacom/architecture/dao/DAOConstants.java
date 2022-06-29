@@ -31,7 +31,7 @@ public interface DAOConstants {
 	
 	String SELECT_CORSISTA_SEQ = "select corsista_seq.nextval from dual";
 	
-	String DELETE_CORSISTA = "delete from corso where cod_corsista = ?";
+	String DELETE_CORSISTA = "delete from corsista where cod_corsista = ?";
 	
 	String UPDATE_CORSISTA = "update corsista set nomecorsista = ?, cognomecorsista = ?, precedentiformativi = ? where cod_corsista = ?";
 	

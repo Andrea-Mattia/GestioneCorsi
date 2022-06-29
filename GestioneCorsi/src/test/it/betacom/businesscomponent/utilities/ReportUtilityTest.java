@@ -1,4 +1,4 @@
-package it.betacom.businesscomponent.utilities;
+package test.it.betacom.businesscomponent.utilities;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import it.betacom.architecture.dao.DAOException;
+import it.betacom.businesscomponent.utilities.ReportUtility;
 
 class ReportUtilityTest {
 	ReportUtility rU;
