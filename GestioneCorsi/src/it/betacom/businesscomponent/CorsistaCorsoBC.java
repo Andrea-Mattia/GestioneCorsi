@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import it.betacom.architecture.dao.DAOException;
 import it.betacom.architecture.dbaccess.DBAccess;
 import it.betacom.businesscomponent.model.CorsistaCorso;
+import it.betacom.architecture.dao.CorsistaCorsoDAO;
 
 public class CorsistaCorsoBC {
 private Connection conn;
