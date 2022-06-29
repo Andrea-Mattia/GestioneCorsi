@@ -19,6 +19,7 @@ public class AggiungiCorsista extends HttpServlet {
 		Corsista c = new Corsista();
 		
 		try {
+			c.setCodCorsista(Long.parseLong(request.getParameter("codcorsista")));
 			c.setNomeCorsista(request.getParameter("nome"));
 			c.setCognomeCorsista(request.getParameter("cognome"));
 			c.setPrecedentiFormativi(Integer.parseInt(request.getParameter("precedentiFormativi")));
