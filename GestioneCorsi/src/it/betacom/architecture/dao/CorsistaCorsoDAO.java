@@ -12,6 +12,7 @@ import javax.sql.rowset.RowSetProvider;
 
 import it.betacom.businesscomponent.adapter.AdapterDAO;
 import it.betacom.businesscomponent.model.Corsista;
+import it.betacom.businesscomponent.model.Corso;
 
 public class CorsistaCorsoDAO extends AdapterDAO<Corsista> implements DAOConstants {
 
