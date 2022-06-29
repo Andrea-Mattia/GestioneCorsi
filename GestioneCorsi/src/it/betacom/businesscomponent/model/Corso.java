@@ -3,8 +3,8 @@ package it.betacom.businesscomponent.model;
 import java.util.Date;
 
 public class Corso {
-	private int cod_corso;
-	private int cod_docente;
+	private int codCorso;
+	private int codDocente;
 	private String nomeCorso;
 	private Date dataInizio;
 	private Date dataFine;
@@ -12,17 +12,17 @@ public class Corso {
 	private String commentiCorso;
 	private String aulaCorso;
 	
-	public int getCod_corso() {
-		return cod_corso;
+	public int getCodCorso() {
+		return codCorso;
 	}
-	public void setCod_corso(int cod_corso) {
-		this.cod_corso = cod_corso;
+	public void setCodCorso(int cod_corso) {
+		this.codCorso = cod_corso;
 	}
-	public int getCod_docente() {
-		return cod_docente;
+	public int getCodDocente() {
+		return codDocente;
 	}
-	public void setCod_docente(int cod_docente) {
-		this.cod_docente = cod_docente;
+	public void setCodDocente(int cod_docente) {
+		this.codDocente = cod_docente;
 	}
 	public String getNomeCorso() {
 		return nomeCorso;
@@ -62,8 +62,9 @@ public class Corso {
 	}
 	@Override
 	public String toString() {
-		return "Corso [cod_corso=" + cod_corso + ", cod_docente=" + cod_docente + ", nomeCorso=" + nomeCorso
+		return "Corso [cod_corso=" + codCorso + ", cod_docente=" + codDocente + ", nomeCorso=" + nomeCorso
 				+ ", dataInizio=" + dataInizio + ", dataFine=" + dataFine + ", costoCorso=" + costoCorso
 				+ ", commentiCorso=" + commentiCorso + ", aulaCorso=" + aulaCorso + "]";
 	}
 }
+
