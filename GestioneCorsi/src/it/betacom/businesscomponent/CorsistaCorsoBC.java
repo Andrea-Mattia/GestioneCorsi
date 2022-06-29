@@ -18,7 +18,7 @@ private Connection conn;
 	
 	public void create(CorsistaCorso cC) throws DAOException, ClassNotFoundException, IOException {
 		try {
-			CorsistaCorsoDAO.getFactory().create(conn, cC);
+			CorsistaCorsoDAO.getFactory().create(conn, cC);;
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
 		}

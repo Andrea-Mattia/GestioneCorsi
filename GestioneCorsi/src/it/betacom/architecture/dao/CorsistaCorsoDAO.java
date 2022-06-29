@@ -2,19 +2,15 @@ package it.betacom.architecture.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
 
 import it.betacom.businesscomponent.adapter.AdapterDAO;
-import it.betacom.businesscomponent.model.Corsista;
-import it.betacom.businesscomponent.model.Corso;
+import it.betacom.businesscomponent.model.CorsistaCorso;
 
-public class CorsistaCorsoDAO extends AdapterDAO<Corsista> implements DAOConstants {
+public class CorsistaCorsoDAO extends AdapterDAO<CorsistaCorso> implements DAOConstants {
 
     private CachedRowSet rowSet;
 
@@ -34,15 +30,15 @@ public class CorsistaCorsoDAO extends AdapterDAO<Corsista> implements DAOConstan
     }
 
     @Override
-    public void create(Connection conn, Corsista entity1, Corso entity2) throws DAOException {
+    public void create(Connection conn, CorsistaCorso entity) throws DAOException {
 
         try {
             rowSet.setCommand(SELECT_CORSISTA_CORSO);
             rowSet.execute(conn);
 
             rowSet.moveToInsertRow();
-            rowSet.updateLong(1, entity1.getCodCorsista());
-            rowSet.updateLong(2, entity2.getCodCorso());
+            rowSet.updateLong(1, entity.getCodCorsista());
+            rowSet.updateLong(2, entity.getCodCorso());
 
             rowSet.insertRow();
             rowSet.moveToCurrentRow();
@@ -54,14 +50,14 @@ public class CorsistaCorsoDAO extends AdapterDAO<Corsista> implements DAOConstan
     }
 
     @Override
-    public void delete(Connection conn, long idCorsista, long idCorso) throws DAOException {
+    public void delete(Connection conn, long codCorsista, long codCorso) throws DAOException {
 
         PreparedStatement ps;
 
         try {
             ps = conn.prepareStatement(DELETE_CORSISTA_CORSO);
-            ps.setLong(1, idCorsista);
-            ps.setLong(2, idCorso);
+            ps.setLong(1, codCorsista);
+            ps.setLong(2, codCorso);
             ps.execute();
 
             conn.commit();
