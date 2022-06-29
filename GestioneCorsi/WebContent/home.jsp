@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<%@ include file="nav.jsp"%>
 	<h1>TEST</h1>
 	
 	<footer>
