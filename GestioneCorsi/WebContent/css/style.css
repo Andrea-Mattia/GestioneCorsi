@@ -9,6 +9,39 @@ html {
 	padding: 0;
 }
 
+main {
+	margin: 5em 0;
+}
+
+.my-page-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.popular-courses-container {
+	display: flex;
+	justify-content: space-between;
+	max-height: 300px;
+	margin: 5em 0;
+}
+
+.popular-courses-container > div {
+	width: calc(50% - 3em);
+}
+
+.teacher-table, .teacher-table th {
+	text-align: right;
+}
+
+.numeric-info {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	text-align: center;
+}
+
+
+
 
 footer {
 	display: flex;
@@ -26,5 +59,17 @@ footer > a:hover {
 
 footer > * {
 	margin: 1em 2em;
+}
+
+@media screen and (max-width: 768px) {
+	.popular-courses-container > div {
+		width: 80%;
+	}
+	
+	.popular-courses-container {
+		justify-content: center;
+		flex-wrap: wrap;
+		max-height: 600px;
+	}
 }
 
