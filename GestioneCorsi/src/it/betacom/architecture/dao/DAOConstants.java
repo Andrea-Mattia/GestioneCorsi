@@ -1,7 +1,7 @@
 package it.betacom.architecture.dao;
 
 public interface DAOConstants {
-	
+		
 	/*############################################--ADMIN--############################################*/
 	String SELECT_ADMINPASS = "Select password from amministratore where nomeadmin = ?";
 	
@@ -45,17 +45,27 @@ public interface DAOConstants {
 		
 	
 	/*############################################--UTILITIES--############################################*/
-	String SELECT_COMMENT_SUM = "select count(*) from corso where commenti is not null";
+
+	String SELECT_CORSISTA_SUM = "select count(*) from corsista coa\r\n"
+			+ "join corsista_corso cc on cc.cod_corsista = coa.cod_corsista\r\n"
+			+ "where cc.cod_corso in (select cor.cod_corso from corso cor where sysdate <= cor.datafine and sysdate >= cor.datainizio)";
+	
+	String SELECT_LAST_COURSE = "select * from corso where (select max(datainizio) from corso) = datainizio ";
+	
+	String SELECT_COMMENT_SUM = "select count(*) from corso where commenticorso is not null";
 	
 	String SELECT_MULTI_COURSES = "select distinct d.nomedocente, d.cognomedocente, d.cod_docente from docente d \r\n"
 			+ "inner join corso c on d.cod_docente = c.cod_docente \r\n"
 			+ "where (select count(*) from corso \r\n"
 			+ "where corso.cod_docente = d.cod_docente) > 1";
 	
-	String SELECT_AVAILABLE_COURSES = "select nomecorso from corso where sysdate < datainizio";
+	String SELECT_AVAILABLE_COURSES = "select corso.nomecorso from corso \r\n"
+			+ "where sysdate < corso.datainizio and \r\n"
+			+ "(select count(*) from corsista_corso where corsista_corso.cod_corso = corso.cod_corso) < 12";
 	
 	String SELECT_POPULAR_COURSES = "select c.cod_corso, c.nomecorso, count(cc.cod_corsista) as tot_corsisti from corsista_corso cc \r\n"
 			+ "join corso c on cc.cod_corso = c.cod_corso \r\n"
 			+ "group by c.cod_corso, c.nomecorso \r\n"
 			+ "order by tot_corsisti desc";
-	}
+	
+}
