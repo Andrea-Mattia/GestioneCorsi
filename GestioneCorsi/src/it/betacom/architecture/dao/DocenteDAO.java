@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import it.betacom.businesscomponent.AdapterDAO;
+import it.betacom.businesscomponent.adapter.AdapterDAO;
 import it.betacom.businesscomponent.model.Docente;
 
 public class DocenteDAO extends AdapterDAO<Docente> implements DAOConstants {

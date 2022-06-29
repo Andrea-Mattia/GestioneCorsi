@@ -5,7 +5,7 @@ public interface DAOConstants {
 	/*############################################--ADMIN--############################################*/
 	String SELECT_ADMINPASS = "select password from amministratore";
 	
-	
+		
 	/*############################################--DOCENTE--############################################*/
 	String SELECT_DOCENTI = "select * from docente";
 	

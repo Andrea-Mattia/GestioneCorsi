@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
 
-import it.betacom.businesscomponent.AdapterDAO;
+import it.betacom.businesscomponent.adapter.AdapterDAO;
 import it.betacom.businesscomponent.model.Corsista;
 
 public class CorsistaDAO extends AdapterDAO<Corsista> implements DAOConstants {
