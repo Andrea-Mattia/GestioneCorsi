@@ -3,7 +3,7 @@ package it.betacom.architecture.dao;
 public interface DAOConstants {
 		
 	/*############################################--ADMIN--############################################*/
-	String SELECT_ADMINPASS = "select password from amministratore";
+	String SELECT_ADMINPASS = "Select password from amministratore where nomeadmin = ?";
 	
 	
 	/*############################################--DOCENTE--############################################*/

@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+	<jsp:include page="nav.jsp"/>
+		
+	<footer class="footer"><%@include file="footer.html" %></footer>
 </body>
 </html>
