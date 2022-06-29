@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
 
-import it.betacom.businesscomponent.AdapterDAO;
+import it.betacom.businesscomponent.adapter.AdapterDAO;
 import it.betacom.businesscomponent.model.Corsista;
 
 public class CorsistaDAO extends AdapterDAO<Corsista> implements DAOConstants {
@@ -136,7 +136,10 @@ public class CorsistaDAO extends AdapterDAO<Corsista> implements DAOConstants {
 
 			String[] criterioDiRicerca = query.toLowerCase().split(" ");
 			
+			boolean find = false;
+			
 			if(criterioDiRicerca.length == 1) {
+				
 				PreparedStatement pr = conn.prepareStatement(SEARCH_CORSISTA);
 				
 				for(int i = 1; i <= 2; i++) {
@@ -149,15 +152,22 @@ public class CorsistaDAO extends AdapterDAO<Corsista> implements DAOConstants {
 						pr.setString(1, "");
 					
 					ResultSet rs = pr.executeQuery();
-					rs.next();
 					
-					Corsista cor = new Corsista();
-					cor.setCodCorsista(rs.getLong(1));
-					cor.setNomeCorsista(rs.getString(2));
-					cor.setCognomeCorsista(rs.getString(3));
-					cor.setPrecedentiFormativi(rs.getInt(4));
+					while(rs.next()) {
+						
+						Corsista cor = new Corsista();
+						cor.setCodCorsista(rs.getLong(1));
+						cor.setNomeCorsista(rs.getString(2));
+						cor.setCognomeCorsista(rs.getString(3));
+						cor.setPrecedentiFormativi(rs.getInt(4));
+						
+						for(Corsista c : lista)
+	                        if(c.getCodCorsista() == cor.getCodCorsista())
+	                            find = true;
+	                    if(!find)
+	                        lista.add(cor);
+					}
 					
-					lista.add(cor);
 				}
 				
 			} else {
@@ -167,20 +177,26 @@ public class CorsistaDAO extends AdapterDAO<Corsista> implements DAOConstants {
 				pr.setString(2, criterioDiRicerca[1]);
 				
 				ResultSet rs = pr.executeQuery();
-				rs.next();
 				
-				Corsista cor = new Corsista();
-				cor.setCodCorsista(rs.getLong(1));
-				cor.setNomeCorsista(rs.getString(2));
-				cor.setCognomeCorsista(rs.getString(3));
-				cor.setPrecedentiFormativi(rs.getInt(4));
-				
-				lista.add(cor);
+				while(rs.next()) {
+					Corsista cor = new Corsista();
+					cor.setCodCorsista(rs.getLong(1));
+					cor.setNomeCorsista(rs.getString(2));
+					cor.setCognomeCorsista(rs.getString(3));
+					cor.setPrecedentiFormativi(rs.getInt(4));
+					
+					for(Corsista c : lista)
+                        if(c.getCodCorsista() == cor.getCodCorsista())
+                            find = true;
+                    if(!find)
+                        lista.add(cor);
+				}
 			}
 
 			Corsista[] corsisti = lista.toArray(new Corsista[lista.size()]);
 
 			return corsisti;
+			
 		} catch(SQLException sql) {
 			throw new DAOException(sql);
 		}

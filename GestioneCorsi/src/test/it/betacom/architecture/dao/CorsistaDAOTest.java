@@ -82,9 +82,7 @@ class CorsistaDAOTest {
 			Corsista[] corsisti = CorsistaDAO.getFactory().getAll(conn);
 			assertNotNull(corsisti);
 
-			for (Corsista c : corsisti)
-				System.out.println(c);
-
+			
 		} catch (DAOException exc) {
 			exc.printStackTrace();
 			fail("Get all fallito: " + exc.getMessage());
@@ -98,7 +96,7 @@ class CorsistaDAOTest {
 
 		try {
 
-			Corsista[] corsisti = CorsistaDAO.getFactory().searchCorsista(conn, "fabio vo");
+			Corsista[] corsisti = CorsistaDAO.getFactory().searchCorsista(conn, "r");
 			assertNotNull(corsisti);
 
 			for (Corsista cor : corsisti)
