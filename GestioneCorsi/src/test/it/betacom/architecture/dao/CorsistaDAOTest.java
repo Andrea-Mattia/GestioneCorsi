@@ -58,7 +58,7 @@ class CorsistaDAOTest {
 		try {
 
 			corsista = new Corsista();
-			corsista.setCodCorsista(6);
+			corsista.setCodCorsista(13);
 			corsista.setNomeCorsista("Fabio");
 			corsista.setCognomeCorsista("Volo");
 			corsista.setPrecedentiFormativi(0);
@@ -115,7 +115,7 @@ class CorsistaDAOTest {
 
 		try {
 
-			CorsistaDAO.getFactory().delete(conn, 6);
+			CorsistaDAO.getFactory().delete(conn, 13);
 
 			System.out.println("Corsista eliminato");
 
