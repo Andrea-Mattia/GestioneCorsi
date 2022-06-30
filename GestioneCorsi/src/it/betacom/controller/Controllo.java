@@ -17,7 +17,7 @@ public class Controllo extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		String codAdmin = request.getParameter("codAdmin");
+		String codAdmin = request.getParameter("username");
 		String password = AlgoritmoMD5.convertiMD5(request.getParameter("password"));
 		
 		HttpSession session = request.getSession();
@@ -27,23 +27,28 @@ public class Controllo extends HttpServlet {
 				LoginUtility lU = new LoginUtility();
 				adminpass = lU.getAdminPass(codAdmin);
 				if(adminpass != null) {
-					session.getAttribute(password);
+					session.setAttribute("username", codAdmin);
 					response.sendRedirect("home.jsp");
 				}else {
-					String valid = (String) session.getAttribute("try");
-					int x = Integer.parseInt(valid);
-					if(x < 5) {
-						session.setAttribute("try", x++);
+					if(session.getAttribute("try") == null) {
+						session.setAttribute("try", "0");
 					}
-					response.sendRedirect("login.jsp");
+						String valid = (String) session.getAttribute("try");
+						int x = Integer.parseInt(valid);
+						if(x < 4) {
+							x++;
+							System.out.println(x);
+							session.setAttribute("try", String.valueOf(x));
+							response.sendRedirect("login.jsp");
+						} else {
+							System.out.println("Sono arrivato qui");
+							response.sendRedirect("accessonegato.jsp");
+						}
 				}
 			}catch(Exception exc) {
 				exc.printStackTrace();
 				throw new ServletException(exc.getMessage());
 			}
-		}else {
-			response.sendRedirect("accessonegato.jsp");
 		}
 	}
-
 }

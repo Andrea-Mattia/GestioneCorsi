@@ -1,7 +1,5 @@
 <%
 	if(session.getAttribute("username") == null) {
-		if(session.getAttribute("try") == null)
-			session.setAttribute("try", 1);
 %>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -29,7 +27,7 @@
 					<span class="input-group-addon">
 						<i class="glyphicon glyphicon-log-in"></i>
 					</span>
-				<input type="number" name="username" placeholder="Codice Amministratore..." class="form-control">
+				<input type="text" name="username" placeholder="Codice Amministratore..." class="form-control">
 				</div>
 			</div>	
 		</div>
@@ -60,6 +58,6 @@
 </html>
 <%
 	} else {
-		response.sendRedirect("acquisti.jsp");
+		response.sendRedirect("home.jsp");
 	}
 %>
