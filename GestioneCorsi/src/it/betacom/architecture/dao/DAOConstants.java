@@ -4,6 +4,7 @@ public interface DAOConstants {
 		
 	/*############################################--ADMIN--############################################*/
 	String SELECT_ADMINPASS = "Select password from amministratore where cod_admin = ?";
+	String SELECT_ADMIN_NAME = "select nomeadmin from amministratore";
 	
 		
 	/*############################################--DOCENTE--############################################*/

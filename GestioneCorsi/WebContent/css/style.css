@@ -16,6 +16,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	color: #abd1c6;
 }
 
 main {
@@ -31,7 +32,8 @@ main {
 .btn.btn-warning {
 	margin-top: 1rem;
 	color:#001e1d;
-	background-color: #f9bc60
+	background-color: #f9bc60;
+	font-weight: 600;
 }
 
 .navbar {
@@ -49,8 +51,16 @@ main {
 	justify-content: space-between;
 }
 
-.add-corsista {
-	color: #abd1c6;
+.panel-danger>.panel-heading {
+	background-color: #e16162;
+	color: #fffffe;
+}
+
+.panel-body {
+	background-color: #fffffe;
+	color: #001e1d;
+	font-size: 18px;
+	font-weight: 600;
 }
 
 
@@ -63,6 +73,7 @@ main {
 	max-height: 500px;
 	margin: 5em 0;
 	row-gap: 2em;
+	color: #001e1d;
 }
 
 .popular-courses-container > * {

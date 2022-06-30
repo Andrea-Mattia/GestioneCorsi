@@ -5,8 +5,7 @@
 <%@page import="it.betacom.businesscomponent.utilities.ReportUtility"%>
 <%@page import="java.util.Vector"%>
 <%@page import="it.betacom.businesscomponent.facade.AdminFacade"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" errorPage="error.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -132,9 +131,9 @@
 					<table class="table table-hover">
 						<thead>
 							<tr>
-								<th>Nominativo</th>
+								<th>Nome</th>
+								<th>Cognome</th>
 								<th>Precedenti formativi</th>
-								<th> </th>
 							</tr>
 						</thead>
 						<tbody>
@@ -147,15 +146,10 @@
 							%>
 							
 							<tr>
-								<td><a data-toggle="modal" data-target="#editModal_<%= cor.getCodCorsista() %>"><%= cor.getNomeCorsista() %> <%= cor.getCognomeCorsista()%></a></td>
+								<td><%= cor.getNomeCorsista() %></td>
+								<td><%= cor.getCognomeCorsista()%></td>
 								<td><%= (cor.getPrecedentiFormativi() == 1) ? true : false   %></td>
-								<td>
-									<jsp:include page="modal.jsp">
-										<jsp:param value="<%= cor.getCodCorsista() %>" name="id"/>
-									</jsp:include>
-								</td>
 							</tr>
-							
 							
 							<% 
 								} 
