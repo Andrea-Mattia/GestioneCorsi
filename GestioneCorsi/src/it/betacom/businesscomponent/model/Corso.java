@@ -3,8 +3,8 @@ package it.betacom.businesscomponent.model;
 import java.util.Date;
 
 public class Corso {
-	private int codCorso;
-	private int codDocente;
+	private long codCorso;
+	private long codDocente;
 	private String nomeCorso;
 	private Date dataInizio;
 	private Date dataFine;
@@ -12,13 +12,13 @@ public class Corso {
 	private String commentiCorso;
 	private String aulaCorso;
 	
-	public int getCodCorso() {
+	public long getCodCorso() {
 		return codCorso;
 	}
 	public void setCodCorso(int codCorso) {
 		this.codCorso = codCorso;
 	}
-	public int getCodDocente() {
+	public long getCodDocente() {
 		return codDocente;
 	}
 	public void setCodDocente(int codDocente) {

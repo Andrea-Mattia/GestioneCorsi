@@ -2,17 +2,17 @@ package it.betacom.businesscomponent.model;
 
 public class Corsista {
 
-	private long CodCorsista;
+	private long codCorsista;
 	private String nomeCorsista;
 	private String cognomeCorsista;
 	private int precedentiFormativi;
 
 	public long getCodCorsista() {
-		return CodCorsista;
+		return codCorsista;
 	}
 
 	public void setCodCorsista(long codCorsista) {
-		CodCorsista = codCorsista;
+		this.codCorsista = codCorsista;
 	}
 
 	public String getNomeCorsista() {
@@ -41,7 +41,7 @@ public class Corsista {
 
 	@Override
 	public String toString() {
-		return "Corsista [CodCorsista=" + CodCorsista + ", nomeCorsista=" + nomeCorsista + ", cognomeCorsista="
+		return "Corsista [CodCorsista=" + codCorsista + ", nomeCorsista=" + nomeCorsista + ", cognomeCorsista="
 				+ cognomeCorsista + ", precedentiFormativi=" + precedentiFormativi + "]";
 	}
 }

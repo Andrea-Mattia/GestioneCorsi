@@ -1,7 +1,7 @@
 insert into amministratore values(666, 'Betacom', 'Roma', 'Pass$01');
 
-insert into docente values(1, 'Massimo', 'Ghianda', 'Ho fatto un sacco di cose belle e interessanti');
-insert into docente values(2, 'Curzio', 'Pratillo', 'Trenitalia me deve ancora pagà');
+insert into docente values(1, 'Massimo', 'Ghianda', 'Preparatore certificazioni Oracle');
+insert into docente values(2, 'Curzio', 'Pratillo', 'DBA master');
 insert into docente values(3, 'Franco', 'Franchi', 'I film sono belli, ma preferisco insegnare');
 
 

@@ -3,8 +3,6 @@ package test.it.betacom.architecture.dao;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.Statement;
 import java.util.GregorianCalendar;
 
 import org.junit.jupiter.api.AfterEach;
@@ -24,28 +22,30 @@ class CorsistaCorsoDAOTest {
 	private Corsista corsista;
 	private Corso corso;
 	private CorsistaCorso cc;
-	private Connection conn;
-
+	
 	@BeforeEach
-	void setUp() throws Exception {  //set di dati prova
+	void setUp() throws Exception {  
 		corsista = new Corsista();
-		corsista.setCodCorsista(20);
+		corsista.setCodCorsista(13);
 		corsista.setNomeCorsista("Giovanni");
 		corsista.setCognomeCorsista("Rana");
 		corsista.setPrecedentiFormativi(1);
 		
+		
 		corso = new Corso();
-		corso.setCodCorso(20);
+		corso.setCodCorso(10);
 		corso.setCodDocente(1);
-		corso.setDataInizio(new GregorianCalendar(12,6,2022).getTime());
-		corso.setDataFine(new GregorianCalendar(12,8,2022).getTime());
-		corso.setCostoCorso(1200);
-		corso.setCommentiCorso("figa");
-		corso.setAulaCorso("EA12");
+		corso.setNomeCorso("PERL");
+		corso.setDataInizio(new GregorianCalendar(2022, 7, 31).getTime());
+		corso.setDataFine(new GregorianCalendar(2022, 8, 30).getTime());
+		corso.setCostoCorso(500);
+		corso.setCommentiCorso("Linguaggio di scripting");
+		corso.setAulaCorso("A23Z");
+		
 		
 		cc = new CorsistaCorso();
-		cc.setCodCorsista(20);
-		cc.setCodCorso(20);
+		cc.setCodCorsista(corsista.getCodCorsista());
+		cc.setCodCorso(corso.getCodCorso());
 	}
 	@Test
 	void testCreate() throws ClassNotFoundException, IOException {
@@ -62,15 +62,8 @@ class CorsistaCorsoDAOTest {
 	@AfterEach
 	void tearDown() throws Exception {
 		try {
-			conn = DBAccess.getConnection();
-			CorsistaDAO.getFactory().delete(DBAccess.getConnection(), 1);
-			Statement stmt = conn.createStatement();
-			stmt.executeQuery("Delete from corsista where nomecorsista = 'Giovanni'");
-			conn.commit();
-			stmt.close();
-			Statement stmt2 = conn.createStatement();
-			stmt2.executeUpdate("Delete from corsista_corso where cod_corso = 20 and cod_corsista = 20");
-			conn.commit();			
+			CorsistaDAO.getFactory().delete(DBAccess.getConnection(), 13);
+			CorsoDAO.getFactory().delete(DBAccess.getConnection(), 10);
 			DBAccess.closeConnection();
 		} catch (DAOException exc) {
 			exc.printStackTrace();
