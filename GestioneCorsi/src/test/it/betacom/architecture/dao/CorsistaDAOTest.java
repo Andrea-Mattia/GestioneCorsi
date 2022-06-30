@@ -109,6 +109,25 @@ class CorsistaDAOTest {
 		}
 
 	}
+	
+	@Test
+	@Order(4)
+	void testSearchById() {
+
+		try {
+
+			Corsista cor= CorsistaDAO.getFactory().getById(conn, 2);
+			assertNotNull(cor);
+
+			System.out.println("Corsista con id 2 : " + cor.getCodCorsista() + " " + cor.getNomeCorsista() + " "
+					+ cor.getCognomeCorsista() + " " + cor.getPrecedentiFormativi());
+
+		} catch (DAOException exc) {
+			exc.printStackTrace();
+			fail("Get all fallito: " + exc.getMessage());
+		}
+
+	}
 
 	@AfterAll
 	public static void tearDownAfterClass() throws Exception {

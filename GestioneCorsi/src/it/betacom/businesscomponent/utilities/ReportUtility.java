@@ -1,6 +1,7 @@
 package it.betacom.businesscomponent.utilities;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -152,6 +153,32 @@ public class ReportUtility implements DAOConstants {
 			rs.next();
 			
 			return rs.getInt(1);
+		} catch (SQLException sql) {
+			throw new DAOException(sql);
+		}
+	}
+	
+	public Vector<String[]> getCorsiCorsista(long id) throws DAOException {
+		try {
+			PreparedStatement pr = conn.prepareStatement(
+					SELECT_CORSISTA_COURSES,  
+					ResultSet.TYPE_SCROLL_INSENSITIVE, 
+					ResultSet.CONCUR_READ_ONLY);
+			pr.setLong(1, id);
+			ResultSet rs = pr.executeQuery();
+
+			ResultSetMetaData meta = rs.getMetaData();
+			int nColonne = meta.getColumnCount();
+			Vector<String[]> corsi = new Vector<String[]>();
+			rs.beforeFirst();
+			while (rs.next()) {
+				String[] riga = new String[meta.getColumnCount()];
+				for (int i = 0; i < nColonne; i++) {
+					riga[i] = rs.getString(i + 1);
+				}
+				corsi.add(riga);
+			}
+			return corsi;
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
 		}

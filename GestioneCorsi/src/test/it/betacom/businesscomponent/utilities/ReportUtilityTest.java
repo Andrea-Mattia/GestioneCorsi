@@ -43,10 +43,10 @@ class ReportUtilityTest {
 	void testGetCorsiDisponibili() {
 		System.out.println("###############################################################################");
 		try {
-			Vector<String[]> lista2 = rU.getCorsiDisponibili();
+			Vector<String[]> lista2 = rU.getCorsiCorsista(2);
 			for (String[] a : lista2) {
 				for (String s : a) {
-					System.out.println("disponibili: " + s);
+					System.out.println("corsi frequentati: " + s);
 				}
 			}
 			assertNotNull(lista2);

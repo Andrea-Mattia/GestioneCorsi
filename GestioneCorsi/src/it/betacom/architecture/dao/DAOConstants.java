@@ -35,6 +35,7 @@ public interface DAOConstants {
 	
 	String UPDATE_CORSISTA = "update corsista set nomecorsista = ?, cognomecorsista = ?, precedentiformativi = ? where cod_corsista = ?";
 	
+	String SELECT_CORSISTA_BYID = "select * from corsista where cod_corsista = ?";
 	
 	/*############################################--CORSISTA_CORSO--############################################*/
 	String SELECT_CORSISTA_NUM = "select count(*) from corsista";
@@ -67,5 +68,11 @@ public interface DAOConstants {
 			+ "join corso c on cc.cod_corso = c.cod_corso \r\n"
 			+ "group by c.cod_corso, c.nomecorso \r\n"
 			+ "order by tot_corsisti desc";
+	
+	String SELECT_CORSISTA_COURSES = "select * from corso c \r\n"
+			+ "left join corsista_corso cc\r\n"
+			+ "on c.cod_corso = cc.cod_corso\r\n"
+			+ "where cc.cod_corsista = ?\r\n"
+			+ "order by c.datainizio";
 	
 }

@@ -193,4 +193,27 @@ public class CorsistaDAO extends AdapterDAO<Corsista> implements DAOConstants {
 			throw new DAOException(sql);
 		}
 	}
+	
+	public Corsista getById(Connection conn, long id) throws DAOException {
+		Corsista cor = null;
+		try {
+			PreparedStatement pr = conn.prepareStatement(SELECT_CORSISTA_BYID);
+			pr.setLong(1, id);
+			ResultSet rs = pr.executeQuery();
+			
+			if(rs.next()) {
+				cor = new Corsista();
+				cor.setCodCorsista(rs.getLong(1));
+				cor.setNomeCorsista(rs.getString(2));
+				cor.setCognomeCorsista(rs.getString(3));
+				cor.setPrecedentiFormativi(rs.getInt(4));
+			} 
+			
+			
+		} catch (SQLException sql) {
+			throw new DAOException(sql);
+		}
+		return cor;
+		
+	}
 }

@@ -84,5 +84,14 @@ public class CorsistaBC {
 
 		return corsisti;
 	}
+	
+	public Corsista getByID(long id) throws DAOException {
+		try {
+			return CorsistaDAO.getFactory().getById(conn, id);
+
+		} catch (SQLException sql) {
+			throw new DAOException(sql);
+		}
+	}
 
 }

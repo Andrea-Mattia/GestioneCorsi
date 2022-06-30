@@ -40,5 +40,10 @@ public class AdminFacade {
 		return cBC.getCorsisti();
 	}
 	
+	public Corsista getByIdCorsista(long id) throws DAOException, ClassNotFoundException, IOException {
+		cBC = new CorsistaBC();
+		return cBC.getByID(id);
+	}
+	
 	//aggiungere metodi di CorsoBC e CorsistaCorsoBC
 }

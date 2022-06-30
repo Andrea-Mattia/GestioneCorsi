@@ -132,9 +132,9 @@
 					<table class="table table-hover">
 						<thead>
 							<tr>
-								<th>Nome</th>
-								<th>Cognome</th>
+								<th>Nominativo</th>
 								<th>Precedenti formativi</th>
+								<th> </th>
 							</tr>
 						</thead>
 						<tbody>
@@ -147,10 +147,15 @@
 							%>
 							
 							<tr>
-								<td><%= cor.getNomeCorsista() %></td>
-								<td><%= cor.getCognomeCorsista()%></td>
+								<td><a data-toggle="modal" data-target="#editModal_<%= cor.getCodCorsista() %>"><%= cor.getNomeCorsista() %> <%= cor.getCognomeCorsista()%></a></td>
 								<td><%= (cor.getPrecedentiFormativi() == 1) ? true : false   %></td>
+								<td>
+									<jsp:include page="modal.jsp">
+										<jsp:param value="<%= cor.getCodCorsista() %>" name="id"/>
+									</jsp:include>
+								</td>
 							</tr>
+							
 							
 							<% 
 								} 
