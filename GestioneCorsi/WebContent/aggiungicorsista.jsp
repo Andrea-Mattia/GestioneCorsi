@@ -7,6 +7,7 @@
 <meta charset="ISO-8859-1">
 <title>Aggiungi corsista</title>
 <link rel="stylesheet" href="css/style.css">
+<script src="js/convalida.js"></script>
 </head>
 <body>
 	<jsp:include page="nav.jsp" />
@@ -19,7 +20,7 @@
 
 		<form
 			action="/<%=application.getServletContextName()%>/aggiungiCorsista"
-			method="post" class="form-horizontal">
+			method="post" class="form-horizontal" id="corsistaForm">
 			<input type="hidden" name="codcorsista" value="0">
 
 			<!-- ---------------------------------------------NOME -->
@@ -70,7 +71,7 @@
 						</div>
 						<div class="radio">
 							<label>&nbsp;<input type="radio" name="precedentiFormativi"
-								id="precedentiFormativi" value="0" checked>NO
+								id="precedentiFormativi" value="0">NO
 							</label>
 						</div>
 					</div>

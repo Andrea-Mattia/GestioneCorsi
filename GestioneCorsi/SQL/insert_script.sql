@@ -1,4 +1,4 @@
-insert into amministratore values(666, 'Betacom', 'Roma', 'Pass$01');
+insert into amministratore values(666, 'Betacom', 'Roma', 'b0Rd%k0aW$m!?dF3E5lEbH9=0mpwaZ@2Rd%k0aW$m!?dF3E5lEbH9=0mpwaZ@43Rd%k0aW$m!?dF3E5lEbH9=0mpwaZ@bRd%k0aW$m!?dF3E5lEbH9=0mpwaZ@abRd%k0aW$m!?dF3E5lEbH9=0mpwaZ@fRd%k0aW$m!?dF3E5lEbH9=0mpwaZ@b3Rd%k0aW$m!?dF3E5lEbH9=0mpwaZ@96Rd%k0aW$m!?dF3E5lEbH9=0mpwaZ@6dRd%k0aW$m!?dF3E5lEbH9=0mpwaZ@e2Rd%k0aW$m!?dF3E5lEbH9=0mpwaZ@99Rd%k0aW$m!?dF3E5lEbH9=0mpwaZ@89Rd%k0aW$m!?dF3E5lEbH9=0mpwaZ@3Rd%k0aW$m!?dF3E5lEbH9=0mpwaZ@76Rd%k0aW$m!?dF3E5lEbH9=0mpwaZ@2Rd%k0aW$m!?dF3E5lEbH9=0mpwaZ@9Rd%k0aW$m!?dF3E5lEbH9=0mpwaZ@');
 
 insert into docente values(1, 'Massimo', 'Ghianda', 'Preparatore certificazioni Oracle');
 insert into docente values(2, 'Curzio', 'Pratillo', 'DBA master');

@@ -27,8 +27,12 @@ public class Controllo extends HttpServlet {
 				LoginUtility lU = new LoginUtility();
 				adminpass = lU.getAdminPass(codAdmin);
 				if(adminpass != null) {
-					session.setAttribute("username", codAdmin);
-					response.sendRedirect("home.jsp");
+					if(adminpass.equals(password)) {
+						session.setAttribute("username", codAdmin);
+						response.sendRedirect("home.jsp");
+					} else {
+						response.sendRedirect("accessonegato.jsp");
+					}
 				}else {
 					if(session.getAttribute("try") == null) {
 						session.setAttribute("try", "0");

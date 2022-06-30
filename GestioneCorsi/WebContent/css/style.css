@@ -73,6 +73,7 @@ main {
 	border-radius: 25px;
 }
 
+<<<<<<< HEAD
 .numeric-info h2, .last-course h2 {
 	text-transform: uppercase;
 }
@@ -84,6 +85,8 @@ main {
 .last-course > div {
 	background-color: #f9bc60;
 }
+=======
+>>>>>>> branch 'master' of https://github.com/Andrea-Mattia/GestioneCorsi.git
 
 footer {
 	display: flex;
@@ -101,7 +104,14 @@ footer > a:hover {
 
 footer > * {
 	margin: 1em 2em;
+<<<<<<< HEAD
 }
+=======
+
+}
+
+
+>>>>>>> branch 'master' of https://github.com/Andrea-Mattia/GestioneCorsi.git
 
 @media screen and (max-width: 768px) {
 	.popular-courses-container > div {
@@ -125,3 +135,7 @@ footer > * {
 	}
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/Andrea-Mattia/GestioneCorsi.git
