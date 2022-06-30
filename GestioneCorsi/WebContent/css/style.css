@@ -9,6 +9,8 @@ html {
 	padding: 0;
 }
 
+<<<<<<< HEAD
+=======
 main {
 	margin: 5em 0;
 }
@@ -43,6 +45,7 @@ main {
 
 
 
+>>>>>>> branch 'master' of https://github.com/Andrea-Mattia/GestioneCorsi.git
 footer {
 	display: flex;
 	justify-content: space-evenly;
@@ -59,6 +62,9 @@ footer > a:hover {
 
 footer > * {
 	margin: 1em 2em;
+<<<<<<< HEAD
+}
+=======
 }
 
 @media screen and (max-width: 768px) {
@@ -73,3 +79,4 @@ footer > * {
 	}
 }
 
+>>>>>>> branch 'master' of https://github.com/Andrea-Mattia/GestioneCorsi.git
