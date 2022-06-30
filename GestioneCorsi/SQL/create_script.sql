@@ -1,4 +1,4 @@
---------------------ADMIN
+------------------ADMIN
 create table amministratore(
 cod_admin int primary key,
 nomeadmin varchar2(30) not null,

@@ -1,3 +1,9 @@
+<%
+	if(session.getAttribute("username") == null) {
+		if(session.getAttribute("try") == null)
+			session.setAttribute("try", 1);
+%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -39,9 +45,21 @@
 				<input type="password" name="password" placeholder="Password..." maxlength="15" class="form-control">
 				</div>
 			</div>
-			
 		</div>
+		<div class="row">
+			<div class="col-md-4 col-md-offset-1">
+				<button type="submit" class="btn btn-warning">
+					Login&nbsp;&nbsp;<span class="glyphicon glyphicon-login"></span>
+				</button>
+			</div>
+		</div>
+		</form>
 	</div>
 </body>
 <footer class="footer"><%@include file="footer.html" %></footer>
 </html>
+<%
+	} else {
+		response.sendRedirect("acquisti.jsp");
+	}
+%>
