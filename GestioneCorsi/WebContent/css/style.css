@@ -9,7 +9,6 @@ html {
 	padding: 0;
 }
 
-
 footer {
 	display: flex;
 	justify-content: space-evenly;
@@ -27,4 +26,3 @@ footer > a:hover {
 footer > * {
 	margin: 1em 2em;
 }
-
