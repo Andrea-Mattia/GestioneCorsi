@@ -29,7 +29,7 @@ class CorsistaDAOTest {
 
 		corsista = new Corsista();
 
-		corsista.setCodCorsista(6);
+		corsista.setCodCorsista(0);
 		corsista.setNomeCorsista("Giuseppe");
 		corsista.setCognomeCorsista("Giangi");
 		corsista.setPrecedentiFormativi(1);

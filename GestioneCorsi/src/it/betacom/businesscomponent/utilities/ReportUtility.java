@@ -53,7 +53,7 @@ public class ReportUtility implements DAOConstants {
 			Vector<String[]> corsi = new Vector<String[]>();
 			rs.beforeFirst();
 			while (rs.next()) {
-				String[] riga = new String[meta.getColumnCount()];
+				String[] riga = new String[nColonne];
 				for (int i = 0; i < nColonne; i++) {
 					riga[i] = rs.getString(i + 1);
 				}
@@ -104,7 +104,6 @@ public class ReportUtility implements DAOConstants {
 				cal.setTime(rs.getDate(2));
 				avgFine += cal.get(Calendar.DAY_OF_YEAR);
 				i++;
-				System.out.println(avgFine - avgInizio);
 			}
 		
 			return (avgFine - avgInizio)/i;

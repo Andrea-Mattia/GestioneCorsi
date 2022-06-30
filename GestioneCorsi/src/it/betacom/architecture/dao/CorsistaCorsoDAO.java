@@ -15,11 +15,8 @@ public class CorsistaCorsoDAO extends AdapterDAO<CorsistaCorso> implements DAOCo
     private CachedRowSet rowSet;
 
     private CorsistaCorsoDAO() throws DAOException {
-
         try {
-
             rowSet = RowSetProvider.newFactory().createCachedRowSet();
-
         } catch (SQLException sql) {
             throw new DAOException(sql);
         }
@@ -61,6 +58,7 @@ public class CorsistaCorsoDAO extends AdapterDAO<CorsistaCorso> implements DAOCo
             ps.execute();
 
             conn.commit();
+            
 
         } catch (SQLException sql) {
             throw new DAOException(sql);

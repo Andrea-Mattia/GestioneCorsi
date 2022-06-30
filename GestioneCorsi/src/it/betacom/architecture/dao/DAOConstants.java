@@ -59,7 +59,7 @@ public interface DAOConstants {
 			+ "where (select count(*) from corso \r\n"
 			+ "where corso.cod_docente = d.cod_docente) > 1";
 	
-	String SELECT_AVAILABLE_COURSES = "select corso.nomecorso from corso \r\n"
+	String SELECT_AVAILABLE_COURSES = "select corso.cod_corso, corso.nomecorso,corso.datainizio, corso.costocorso from corso \r\n"
 			+ "where sysdate < corso.datainizio and \r\n"
 			+ "(select count(*) from corsista_corso where corsista_corso.cod_corso = corso.cod_corso) < 12";
 	

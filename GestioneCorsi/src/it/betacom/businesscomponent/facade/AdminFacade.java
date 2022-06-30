@@ -35,5 +35,10 @@ public class AdminFacade {
 		cBC.delete(id);
 	}
 	
+	public Corsista[] getCorsisti() throws ClassNotFoundException, DAOException, IOException {
+		cBC = new CorsistaBC();
+		return cBC.getCorsisti();
+	}
+	
 	//aggiungere metodi di CorsoBC e CorsistaCorsoBC
 }

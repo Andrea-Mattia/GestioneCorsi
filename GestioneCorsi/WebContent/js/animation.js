@@ -1,5 +1,5 @@
-var speed = 100;
-
+const speed = 100;
+let actualSpeed = 0;
 
 function incEltNbr(id) {
   elt = document.getElementById(id);
@@ -9,11 +9,15 @@ function incEltNbr(id) {
 
 
 function incNbrRec(i, endNbr, elt) {
+	if(endNbr > speed)
+		actualSpeed = speed/15;
+	else
+		actualSpeed = speed;
   if (i <= endNbr) {
     elt.innerHTML = i;
     setTimeout(function() {
       incNbrRec(i + 1, endNbr, elt);
-    }, speed);
+    }, actualSpeed);
   }
 }
 
@@ -24,3 +28,4 @@ function incNbr(){
 
 incEltNbr("nbr1");
 incEltNbr("nbr2");
+incEltNbr("nbr3");

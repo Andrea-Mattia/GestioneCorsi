@@ -9,13 +9,14 @@ html {
 	padding: 0;
 }
 
-<<<<<<< HEAD
-=======
+
 main {
-	margin: 5em 0;
+	padding: 5em 0;
+	background-color: #004643;
 }
 
 .my-page-header {
+	color: #fffffe;
 	display: flex;
 	justify-content: space-between;
 }
@@ -23,12 +24,23 @@ main {
 .popular-courses-container {
 	display: flex;
 	justify-content: space-between;
-	max-height: 300px;
+	max-height: 500px;
 	margin: 5em 0;
+	row-gap: 2em;
+}
+
+.popular-courses-container > * {
+	overflow-y: hidden; 
 }
 
 .popular-courses-container > div {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	background-color: #e8e4e6;
+	border-radius: 25px;
 	width: calc(50% - 3em);
+	padding: 30px;
 }
 
 .teacher-table, .teacher-table th {
@@ -38,14 +50,41 @@ main {
 .numeric-info {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
 	text-align: center;
+	flex-direction: column;
+	row-gap: 2em;
+	width: 50%
 }
 
+.section-info {
+	display: flex;
+	justify-content: space-between;
+}
 
+.section-info > div {
+	color: #001e1d;
+	display: flex;
+	width: calc(33% - 3em);
+}
 
+.numeric-info > div, .last-course > div {
+	background-color: #abd1c6;
+	padding: 30px;
+	border-radius: 25px;
+}
 
->>>>>>> branch 'master' of https://github.com/Andrea-Mattia/GestioneCorsi.git
+.numeric-info h2, .last-course h2 {
+	text-transform: uppercase;
+}
+
+.last-course {
+	height: 80%;
+}
+
+.last-course > div {
+	background-color: #f9bc60;
+}
+
 footer {
 	display: flex;
 	justify-content: space-evenly;
@@ -62,14 +101,21 @@ footer > a:hover {
 
 footer > * {
 	margin: 1em 2em;
-<<<<<<< HEAD
-}
-=======
 }
 
 @media screen and (max-width: 768px) {
 	.popular-courses-container > div {
 		width: 80%;
+	}
+	
+	.section-info > div {
+		width: 80%;
+	}
+	
+	.section-info {
+		justify-content: center;
+		row-gap: 2em;
+		flex-wrap: wrap;
 	}
 	
 	.popular-courses-container {
@@ -79,4 +125,3 @@ footer > * {
 	}
 }
 
->>>>>>> branch 'master' of https://github.com/Andrea-Mattia/GestioneCorsi.git
