@@ -32,10 +32,9 @@ public class CorsoDAO extends AdapterDAO<Corso> implements DAOConstants{
 		try {
 			rowSet.setCommand(SELECT_CORSO);
 			rowSet.execute(conn);
-			
 			rowSet.moveToInsertRow();
-			rowSet.updateInt(1, entity.getCodCorso());
-			rowSet.updateInt(2, entity.getCodDocente());
+			rowSet.updateLong(1, entity.getCodCorso());
+			rowSet.updateLong(2, entity.getCodDocente());
 			rowSet.updateString(3, entity.getNomeCorso());
 			rowSet.updateDate(4, new java.sql.Date(entity.getDataInizio().getTime()));
 			rowSet.updateDate(5, new java.sql.Date(entity.getDataFine().getTime()));
@@ -63,7 +62,7 @@ public class CorsoDAO extends AdapterDAO<Corso> implements DAOConstants{
 			ps.setDouble(3, entity.getCostoCorso());
 			ps.setString(4, entity.getCommentiCorso());
 			ps.setString(5, entity.getAulaCorso());
-			ps.setInt(6, entity.getCodCorso());
+			ps.setLong(6, entity.getCodCorso());
 			
 			ps.execute();
 

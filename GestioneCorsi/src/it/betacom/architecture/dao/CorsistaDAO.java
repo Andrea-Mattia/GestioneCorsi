@@ -18,11 +18,8 @@ public class CorsistaDAO extends AdapterDAO<Corsista> implements DAOConstants {
 	private CachedRowSet rowSet;
 	
 	private CorsistaDAO() throws DAOException {
-		
 		try {
-			
 			rowSet = RowSetProvider.newFactory().createCachedRowSet();
-			
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
 		}
@@ -34,7 +31,6 @@ public class CorsistaDAO extends AdapterDAO<Corsista> implements DAOConstants {
 
 	@Override
 	public void create(Connection conn, Corsista entity) throws DAOException {
-		
 		try {
 			rowSet.setCommand(SELECT_CORSISTA);
 			rowSet.execute(conn);
@@ -48,7 +44,6 @@ public class CorsistaDAO extends AdapterDAO<Corsista> implements DAOConstants {
 			rowSet.insertRow();
 			rowSet.moveToCurrentRow();
 			rowSet.acceptChanges();
-
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
 		}
@@ -82,13 +77,10 @@ public class CorsistaDAO extends AdapterDAO<Corsista> implements DAOConstants {
 		PreparedStatement ps;
 
 		try {
-
 			ps = conn.prepareStatement(DELETE_CORSISTA);
 			ps.setLong(1, id);
 			ps.execute();
-
 			conn.commit();
-
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
 		}
