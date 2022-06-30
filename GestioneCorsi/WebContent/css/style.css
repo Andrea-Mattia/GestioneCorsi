@@ -132,6 +132,39 @@ main {
 	background-color: #f9bc60;
 }
 
+/************************************************************
+*	HOME BUTTON
+*************************************************************/
+.home-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	row-gap: 2em;
+	column-gap: 2em;
+}
+
+.home-button .my-btn {
+	height: 150px;
+	width: 150px;
+	border-radius: 50%;
+}
+
+.home-button .my-btn:nth-child(1) {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.home-button .my-btn:nth-child(2) {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.home-button .my-btn:nth-child(3) {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
 
 /************************************************************
 *	FOOTER
