@@ -12,87 +12,91 @@
 <body>
 	<jsp:include page="nav.jsp" />
 
-	<div class="container">
+	<main>
+	
+		<div class="container add-corsista">
 
-		<div class="page-header">
-			<h3>Inserire i dati per la registrazione</h3>
+			<div class="page-header">
+				<h3>Inserire i dati per la registrazione</h3>
+			</div>
+	
+			<form
+				action="/<%=application.getServletContextName()%>/aggiungiCorsista"
+				method="post" class="form-horizontal" id="corsistaForm">
+				<input type="hidden" name="codcorsista" value="0">
+	
+				<!-- ---------------------------------------------NOME -->
+				<div class="form-group">
+	
+					<label class="col-md-1 control-label">Nome corsista</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"> <i
+								class="glyphicon glyphicon-user"></i>
+							</span> <input type="text" name="nome" placeholder="Nome..."
+								class="form-control" id="nome">
+						</div>
+					</div>
+	
+					<div class="col-md-7 control-label" id="infoNome"></div>
+				</div>
+	
+	
+				<div class="form-group">
+	
+					<label class="col-md-1 control-label">Cognome corsista</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"> <i
+								class="glyphicon glyphicon-user"></i>
+							</span> <input type="text" name="cognome" placeholder="Cognome..."
+								class="form-control" id="cognome">
+						</div>
+					</div>
+	
+					<div class="col-md-7 control-label" id="infoCognome"></div>
+				</div>
+	
+	
+				<div class="form-group">
+	
+					<label class="col-md-1 control-label">Precedenti formativi</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"> <i
+								class="glyphicon glyphicon-plus-sign"></i>
+							</span>
+							<div class="radio">
+								<label>&nbsp;<input type="radio" name="precedentiFormativi"
+									id="precedentiFormativi" value="1">SI
+								</label>
+							</div>
+							<div class="radio">
+								<label>&nbsp;<input type="radio" name="precedentiFormativi"
+									id="precedentiFormativi" value="0" checked>NO
+								</label>
+							</div>
+						</div>
+					</div>
+	
+					<div class="col-md-7 control-label" id="infoPrecedentiFormativi"></div>
+				</div>
+	
+				<div class="row">
+	
+					<div class="col-md-4 col-md-offset-1">
+						<button type="submit" class="btn btn-warning">
+							Registrati&nbsp;<span class="glyphicon glyphicon-send"></span>
+						</button>
+					</div>
+	
+				</div>
+	
+			</form>
+
 		</div>
-
-		<form
-			action="/<%=application.getServletContextName()%>/aggiungiCorsista"
-			method="post" class="form-horizontal" id="corsistaForm">
-			<input type="hidden" name="codcorsista" value="0">
-
-			<!-- ---------------------------------------------NOME -->
-			<div class="form-group">
-
-				<label class="col-md-1 control-label">Nome corsista</label>
-				<div class="col-md-4 inputGroupContainer">
-					<div class="input-group">
-						<span class="input-group-addon"> <i
-							class="glyphicon glyphicon-user"></i>
-						</span> <input type="text" name="nome" placeholder="Nome..."
-							class="form-control" id="nome">
-					</div>
-				</div>
-
-				<div class="col-md-7 control-label" id="infoNome"></div>
-			</div>
-
-
-			<div class="form-group">
-
-				<label class="col-md-1 control-label">Cognome corsista</label>
-				<div class="col-md-4 inputGroupContainer">
-					<div class="input-group">
-						<span class="input-group-addon"> <i
-							class="glyphicon glyphicon-user"></i>
-						</span> <input type="text" name="cognome" placeholder="Cognome..."
-							class="form-control" id="cognome">
-					</div>
-				</div>
-
-				<div class="col-md-7 control-label" id="infoCognome"></div>
-			</div>
-
-
-			<div class="form-group">
-
-				<label class="col-md-1 control-label">Precedenti formativi</label>
-				<div class="col-md-4 inputGroupContainer">
-					<div class="input-group">
-						<span class="input-group-addon"> <i
-							class="glyphicon glyphicon-plus-sign"></i>
-						</span>
-						<div class="radio">
-							<label>&nbsp;<input type="radio" name="precedentiFormativi"
-								id="precedentiFormativi" value="1">SI
-							</label>
-						</div>
-						<div class="radio">
-							<label>&nbsp;<input type="radio" name="precedentiFormativi"
-								id="precedentiFormativi" value="0">NO
-							</label>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-7 control-label" id="infoPrecedentiFormativi"></div>
-			</div>
-
-			<div class="row">
-
-				<div class="col-md-4 col-md-offset-1">
-					<button type="submit" class="btn btn-warning">
-						Registrati&nbsp;<span class="glyphicon glyphicon-send"></span>
-					</button>
-				</div>
-
-			</div>
-
-		</form>
-
-	</div>
+	
+	</main>
 
 	<footer class="footer">
 		<%@include file="footer.html"%>

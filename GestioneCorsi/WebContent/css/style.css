@@ -1,18 +1,46 @@
-html {
-	font-size: 100%;
-	min-height: 100%;
-}
-
+/************************************************************
+*	GENERAL
+*************************************************************/
 * {	
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
 
+html {
+	font-size: 100%;
+	min-height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
 
 main {
-	padding: 5em 0;
+	padding: 4em 0;
 	background-color: #004643;
+	flex-grow: 1;
+}
+
+
+/************************************************************
+*	UTILITIES
+*************************************************************/
+.btn.btn-warning {
+	margin-top: 1rem;
+	color:#001e1d;
+	background-color: #f9bc60
+}
+
+.navbar {
+	margin-bottom: 0;
+	background-color: #001e1d;
+}
+
+.page-header {
+	margin-top: 0;
 }
 
 .my-page-header {
@@ -21,6 +49,14 @@ main {
 	justify-content: space-between;
 }
 
+.add-corsista {
+	color: #abd1c6;
+}
+
+
+/************************************************************
+*	REPORT
+*************************************************************/
 .popular-courses-container {
 	display: flex;
 	justify-content: space-between;
@@ -73,7 +109,6 @@ main {
 	border-radius: 25px;
 }
 
-<<<<<<< HEAD
 .numeric-info h2, .last-course h2 {
 	text-transform: uppercase;
 }
@@ -85,34 +120,39 @@ main {
 .last-course > div {
 	background-color: #f9bc60;
 }
-=======
->>>>>>> branch 'master' of https://github.com/Andrea-Mattia/GestioneCorsi.git
 
+
+/************************************************************
+*	FOOTER
+*************************************************************/
 footer {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	background-color: #111;
-	color: white;
+	background-color: #001e1d;
+	color: #abd1c6;
 	flex-wrap: wrap;
 	padding: 40px;
 }
 
-footer > a:hover {
+footer ul {
+	list-style: none;
+}
+
+footer > a {
 	text-decoration: none;
 }
 
 footer > * {
 	margin: 1em 2em;
-<<<<<<< HEAD
-}
-=======
 
 }
 
 
->>>>>>> branch 'master' of https://github.com/Andrea-Mattia/GestioneCorsi.git
 
+/************************************************************
+*	MEDIA QUERIES
+*************************************************************/
 @media screen and (max-width: 768px) {
 	.popular-courses-container > div {
 		width: 80%;
@@ -134,8 +174,3 @@ footer > * {
 		max-height: 600px;
 	}
 }
-
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/Andrea-Mattia/GestioneCorsi.git
