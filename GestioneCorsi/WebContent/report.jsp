@@ -1,7 +1,7 @@
+<%
+	if (session.getAttribute("username") != null) {
+%>
 <%@page import="it.betacom.businesscomponent.model.Corsista"%>
-<%@page import="java.util.Date"%>
-<%@page import="java.util.Calendar"%>
-<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="it.betacom.businesscomponent.utilities.ReportUtility"%>
 <%@page import="java.util.Vector"%>
 <%@page import="it.betacom.businesscomponent.facade.AdminFacade"%>
@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>mikasa es tu casa</title>
+<title>Report</title>
 <%@ include file="cdn.html"%>
 <link rel="stylesheet" href="css/style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
@@ -87,22 +87,17 @@
 					<div>
 						<h2>Ultimo corso</h2>
 						<%
-							SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yy");
 							for(String[] a: corsi) {
-				                Date dateinizio = formato.parse(a[3]);
-				                Date datefine = formato.parse(a[4]);
-				                Calendar inizio_cal = Calendar.getInstance();
-				                Calendar fine_cal = Calendar.getInstance();
-				                inizio_cal.setTime(dateinizio);
-				                fine_cal.setTime(datefine);
+								String[] dataInizio = a[3].split("-");
+								String[] dataFine = a[4].split("-");
 						%>
 						<div>
 							<p><%= a[2] %></p>
 							<p class="date">
 								Durata: 
-								<span><%= inizio_cal.get(Calendar.DAY_OF_MONTH) %>/</span><span><%= inizio_cal.get(Calendar.MONTH) %>/</span><span><%= inizio_cal.get(Calendar.YEAR) %></span>
-								<span> &nbsp; - &nbsp; </span>
-								<span><%= fine_cal.get(Calendar.DAY_OF_MONTH) %>/</span><span><%= fine_cal.get(Calendar.MONTH) %>/</span><span><%= fine_cal.get(Calendar.YEAR) %></span>
+								<span><%= dataInizio[2] %>/<%= dataInizio[1] %>/<%= dataInizio[0] %></span>
+								&nbsp;-&nbsp;
+								<span><%= dataFine[2] %>/<%= dataFine[1] %>/<%= dataFine[0] %></span>
 							</p>
 							<p>Prezzo: <%= a[5] %>&euro;</p>
 							<p>Descrizione: <%= a[6] %></p>
@@ -146,8 +141,8 @@
 							%>
 							
 							<tr>
-								<td><a data-toggle="modal" data-target="#editModal_<%= cor.getCodCorsista() %>"><%= cor.getNomeCorsista() %> <%= cor.getCognomeCorsista()%></a></td>
-								<td><%= (cor.getPrecedentiFormativi() == 1) ? true : false   %></td>
+								<td><a class="nominativo" data-toggle="modal" data-target="#editModal_<%= cor.getCodCorsista() %>"><%= cor.getNomeCorsista() %> <%= cor.getCognomeCorsista()%></a></td>
+								<td><%= (cor.getPrecedentiFormativi() == 1) ? "Si" : "No"   %></td>
 								<td>
 									<jsp:include page="modal.jsp">
 										<jsp:param value="<%= cor.getCodCorsista() %>" name="id"/>
@@ -179,16 +174,12 @@
 							<%
 								corsi = rpu.getCorsiDisponibili();
 								for(String[] dati: corsi) {
-									SimpleDateFormat formato2 = new SimpleDateFormat("dd/MM/yy");
-					                Calendar calendar = Calendar.getInstance();
-					                Date new_course = formato.parse(dati[2]);
-					                calendar.setTime(new_course);
-					                String data_inizio = formato2.format(calendar.getTime());
+									String[] data = dati[2].split("-");
 							%>
 							
 							<tr>
 								<td><%= dati[1] %></td>
-								<td><%= data_inizio %></td>
+								<td><%= data[2] %>/<%= data[1] %>/<%= data[0] %></td>
 								<td><%= dati[3] %>&euro;</td>
 							</tr>
 							
@@ -247,3 +238,8 @@
 	<script src="js/animation.js"></script>
 </body>
 </html>
+<%
+	} else {
+		response.sendRedirect("login.jsp");
+	}
+%>
