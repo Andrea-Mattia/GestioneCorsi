@@ -36,6 +36,7 @@ public class Controllo extends HttpServlet implements DAOConstants {
 						session.setAttribute("username", codAdmin);
 						session.setAttribute("nomeadmin", adminname);
 						response.sendRedirect("home.jsp");
+						session.setAttribute("try", "0");
 					} else {
 						response.sendRedirect("accessonegato.jsp");
 					}
@@ -47,7 +48,6 @@ public class Controllo extends HttpServlet implements DAOConstants {
 					int x = Integer.parseInt(valid);
 					if (x < 4) {
 						x++;
-						System.out.println(x);
 						session.setAttribute("try", String.valueOf(x));
 						response.sendRedirect("login.jsp");
 					} else {

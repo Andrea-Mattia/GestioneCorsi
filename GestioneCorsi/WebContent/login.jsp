@@ -40,7 +40,7 @@
 							<span class="input-group-addon">
 								<i class="glyphicon glyphicon-lock"></i>
 							</span>
-						<input type="password" name="password" placeholder="Password..." maxlength="15" class="form-control">
+						<input type="password" min="1" max="1000" name="password" placeholder="Password..." maxlength="15" class="form-control">
 						</div>
 					</div>
 				</div>
