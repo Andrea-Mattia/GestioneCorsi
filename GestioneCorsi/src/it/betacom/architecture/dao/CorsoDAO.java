@@ -132,4 +132,34 @@ public class CorsoDAO extends AdapterDAO<Corso> implements DAOConstants{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public Corso[] getCorsiAttivi(Connection conn) throws DAOException {
+		Corso[] corsi = null;
+		
+		try {
+			Statement stmt = conn.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE, 
+                    ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = stmt.executeQuery(SELECT_NOME_DATA);
+            rs.last();
+            corsi = new Corso[rs.getRow()];
+            rs.beforeFirst();
+            for(int i = 0; rs.next(); i++) {
+				Corso c = new Corso();
+				c.setCodCorso(rs.getLong(1));
+				c.setCodDocente(rs.getLong(2));
+				c.setNomeCorso(rs.getString(3));
+				c.setDataInizio(new java.util.Date(rs.getDate(4).getTime()));
+				c.setDataFine(new java.util.Date(rs.getDate(5).getTime()));
+				c.setCostoCorso(rs.getDouble(6));
+				c.setCommentiCorso(rs.getString(7));
+				c.setAulaCorso(rs.getString(8));
+				corsi[i] = c;
+			}
+			rs.close();		
+		} catch (SQLException sql) {
+			throw new DAOException(sql);
+		}
+		return corsi;
+	}
 }

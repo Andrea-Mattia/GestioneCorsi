@@ -71,6 +71,11 @@ public class AdminFacade {
 		return corsoBC.getCorso();
 	}
 	
+	public Corso[] getCorsiAttiv() throws ClassNotFoundException, DAOException, IOException {
+		corsoBC = new CorsoBC();
+		return corsoBC.getCorsiAttivi();
+	}
+	
 	public void createCorsistaCorso(CorsistaCorso corsistaCorso) throws ClassNotFoundException, DAOException, IOException {
 		ccBC = new CorsistaCorsoBC();
 		ccBC.create(corsistaCorso);

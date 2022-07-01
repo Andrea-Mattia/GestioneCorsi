@@ -61,4 +61,15 @@ private Connection conn;
 		}
 		return corsi;
 	}
+	
+	public Corso[] getCorsiAttivi() throws DAOException {
+		Corso[] corsi = null;
+		
+		try {
+			corsi = CorsoDAO.getFactory().getCorsiAttivi(conn);
+		} catch (SQLException sql) {
+			throw new DAOException(sql);
+		}
+		return corsi;
+	}
 }
