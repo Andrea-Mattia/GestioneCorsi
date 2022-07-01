@@ -51,7 +51,7 @@ public class Controllo extends HttpServlet implements DAOConstants {
 						session.setAttribute("try", String.valueOf(x));
 						response.sendRedirect("login.jsp");
 					} else {
-						System.out.println("Sono arrivato qui");
+						session.setAttribute("ban", "5");
 						response.sendRedirect("accessonegato.jsp");
 					}
 				}
