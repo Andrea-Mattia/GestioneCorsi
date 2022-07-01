@@ -56,7 +56,12 @@ public class ReportUtility implements DAOConstants {
 			while (rs.next()) {
 				String[] riga = new String[nColonne];
 				for (int i = 0; i < nColonne; i++) {
-					riga[i] = rs.getString(i + 1);
+					if(i == 2) {
+						String[] stringaData = rs.getString(i + 1).toLowerCase().split(" ");
+						riga[i] = stringaData[0];
+					} else {
+						riga[i] = rs.getString(i + 1);						
+					}
 				}
 				corsi.add(riga);
 			}
@@ -136,7 +141,12 @@ public class ReportUtility implements DAOConstants {
 			while (rs.next()) {
 				String[] riga = new String[meta.getColumnCount()];
 				for (int i = 0; i < nColonne; i++) {
-					riga[i] = rs.getString(i + 1);
+					if(i == 3 || i == 4) {
+						String[] stringaData = rs.getString(i + 1).toLowerCase().split(" ");
+						riga[i] = stringaData[0];
+					} else {
+						riga[i] = rs.getString(i + 1);						
+					}
 				}
 				corsi.add(riga);
 			}

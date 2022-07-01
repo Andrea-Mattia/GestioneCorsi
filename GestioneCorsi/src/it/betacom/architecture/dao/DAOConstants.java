@@ -52,7 +52,7 @@ public interface DAOConstants {
 			+ "join corsista_corso cc on cc.cod_corsista = coa.cod_corsista\r\n"
 			+ "where cc.cod_corso in (select cor.cod_corso from corso cor where sysdate <= cor.datafine and sysdate >= cor.datainizio)";
 	
-	String SELECT_LAST_COURSE = "select * from corso where (select max(datainizio) from corso) = datainizio ";
+	String SELECT_LAST_COURSE = "select * from corso where (select max(datainizio) from corso) = datainizio";
 	
 	String SELECT_COMMENT_SUM = "select count(*) from corso where commenticorso is not null";
 	
