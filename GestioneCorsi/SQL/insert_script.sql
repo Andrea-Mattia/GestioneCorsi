@@ -12,7 +12,7 @@ insert into corso values(corso_seq.nextval, 2, 'SQL', TO_DATE('01/06/2023', 'DD/
 insert into corso values(corso_seq.nextval, 3, 'HTML5', TO_DATE('06/03/2022', 'DD/MM/YYYY'), TO_DATE('20/10/2022', 'DD/MM/YYYY'), 6000, 'Acido desossiribonucleico', 'AJ81');
 insert into corso values(corso_seq.nextval, 1, 'Python', TO_DATE('06/03/2023', 'DD/MM/YYYY'), TO_DATE('20/10/2023', 'DD/MM/YYYY'), 6000, 'Corso Python 300h', 'D4R7'); 
 
-insert into corsista values(corsista_seq.nextval, 'Max', 'Ghianda', 1);
+insert into corsista values(corsista_seq.nextval, 'Vera', 'Bella', 1);
 insert into corsista values(corsista_seq.nextval, 'Franco', 'Neri', 0);
 insert into corsista values(corsista_seq.nextval, 'Carcarlo', 'Pravettoni', 0);
 insert into corsista values(corsista_seq.nextval, 'Marco', 'Columbro', 1);

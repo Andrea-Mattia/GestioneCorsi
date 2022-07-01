@@ -9,7 +9,7 @@ import java.util.Properties;
 
 import it.betacom.architecture.dao.DAOException;
 
-public class DBAccess{
+public class DBAccess {
 
 	private static Connection conn;
 
@@ -47,7 +47,5 @@ public class DBAccess{
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
 		}
-
 	}
-
 }

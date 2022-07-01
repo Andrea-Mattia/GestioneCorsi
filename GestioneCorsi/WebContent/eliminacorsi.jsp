@@ -1,3 +1,5 @@
+<%@page import="java.util.Calendar"%>
+<%@page import="java.util.Date"%>
 <%@page import="it.betacom.businesscomponent.facade.AdminFacade"%>
 <%@page import="it.betacom.businesscomponent.model.Corso"%>
 <%
@@ -32,11 +34,15 @@ if (session.getAttribute("username") != null) {
 					<tbody>
 						<%
 						Corso[] corsi = AdminFacade.getIstance().getCorsi();
+						Calendar cal = Calendar.getInstance();
+						Date data = cal.getTime();
 						for (Corso c : corsi) {
 						%>
 						<tr>
 							<td><%=c.getNomeCorso()%></td>
-							<td></td>
+							<td>
+							<%= (c.getDataFine()).before(data) ? "Terminato" : "Disponibile" %>
+							<%= ((c.getDataInizio()).before(data) & (c.getDataFine()).after(data)) ? "/ Attivo" : "" %></td>
 							<td>
 								<form
 									action="/<%=application.getServletContextName()%>/rimuoviCorso?id=<%=c.getCodCorso()%>"

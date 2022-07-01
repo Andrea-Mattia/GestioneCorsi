@@ -16,7 +16,6 @@ public class CorsistaBC {
 
 	public CorsistaBC() throws ClassNotFoundException, DAOException, IOException {
 		conn = DBAccess.getConnection();
-
 	}
 
 	public void create(Corsista corsista) throws ClassNotFoundException, DAOException, IOException {

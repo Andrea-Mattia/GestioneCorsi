@@ -16,7 +16,7 @@
 		<div class="container add-corsista">
 
 			<div class="page-header">
-				<h3>Inserire i dati per la registrazione</h3>
+				<h3>Inserire i dati per aggiungere un corsista</h3>
 			</div>
 	
 			<form
@@ -77,9 +77,6 @@
 							</div>
 						</div>
 					</div>
-	
-					<div class="col-md-7 control-label" id="infoPrecedentiFormativi"></div>
-				</div>
 	
 				<div class="row">
 	

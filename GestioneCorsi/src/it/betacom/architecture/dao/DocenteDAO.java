@@ -25,6 +25,7 @@ public class DocenteDAO extends AdapterDAO<Docente> implements DAOConstants {
 			Statement stmt = conn.createStatement(
 					ResultSet.TYPE_SCROLL_INSENSITIVE, 
 					ResultSet.CONCUR_READ_ONLY);
+			
 			ResultSet rs = stmt.executeQuery(SELECT_DOCENTI);
 			rs.last();
 			docenti = new Docente[rs.getRow()];

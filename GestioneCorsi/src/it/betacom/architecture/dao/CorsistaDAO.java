@@ -68,7 +68,6 @@ public class CorsistaDAO extends AdapterDAO<Corsista> implements DAOConstants {
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
 		}
-		
 	}
 
 	@Override

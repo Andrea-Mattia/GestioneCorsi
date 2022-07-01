@@ -35,20 +35,16 @@ public class DAOException extends SQLException {
 			default:
 				chiave = "Eccezione SQL non prevista";
 				log(sql);
-			
 			}
 		}
 		message = chiave;
-		
 	}
 	
-
 	private void log(SQLException sql) {
 		sql.printStackTrace();
 		System.err.println("Motivo: " + sql.getMessage());
 		System.err.println("Stato app: " + sql.getSQLState());
 		System.err.println("Codice errore: " + sql.getErrorCode());
 		System.err.println("Causa eccezione: " + sql.getCause());
-		
 	}
 }

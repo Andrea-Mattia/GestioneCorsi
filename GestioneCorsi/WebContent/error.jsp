@@ -1,8 +1,7 @@
 <%@page import="it.betacom.architecture.dao.DAOException"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="it.betacom.architecture.dao.DAOException"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" isErrorPage="true"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" isErrorPage="true"%>
 <!DOCTYPE html>
 <html>
 <head>

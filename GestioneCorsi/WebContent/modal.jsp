@@ -14,8 +14,7 @@ if (request.getParameter("id") == null) {
 	ReportUtility rpu2 = new ReportUtility();
 	AdminFacade adm = AdminFacade.getIstance();
 %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
 <div class="modal fade" id="editModal_<%=id%>" role="dialog" >
 	<div class="modal-dialog modal-md">

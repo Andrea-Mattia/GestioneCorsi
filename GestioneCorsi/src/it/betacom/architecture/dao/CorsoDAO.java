@@ -26,7 +26,7 @@ public class CorsoDAO extends AdapterDAO<Corso> implements DAOConstants{
 	public static CorsoDAO getFactory() throws DAOException {
 		return new CorsoDAO();
 	}
-	//----------CREATE
+	
 	@Override
 	public void create(Connection conn, Corso entity) throws DAOException {
 		try {
@@ -50,7 +50,7 @@ public class CorsoDAO extends AdapterDAO<Corso> implements DAOConstants{
 			throw new DAOException(sql);
 		}
 	}
-	//----------UPDATE
+	
 	@Override
 	public void update(Connection conn, Corso entity) throws DAOException {
 		PreparedStatement ps;
@@ -71,7 +71,7 @@ public class CorsoDAO extends AdapterDAO<Corso> implements DAOConstants{
 			throw new DAOException(sql);
 		}
 	}
-	//----------DELETE
+	
 	@Override
 	public void delete(Connection conn, long id) throws DAOException {
 		PreparedStatement ps;
@@ -87,12 +87,7 @@ public class CorsoDAO extends AdapterDAO<Corso> implements DAOConstants{
 			throw new DAOException(sql);
 		}
 	}
-
-	@Override
-	public Corso getById(Connection conn, long id) throws DAOException {
-		// TODO Auto-generated method stub
-		return super.getById(conn, id);
-	}
+	
 
 	@Override
 	public Corso[] getAll(Connection conn) throws DAOException {
@@ -127,39 +122,9 @@ public class CorsoDAO extends AdapterDAO<Corso> implements DAOConstants{
 		}
 		return corsi;
 	}
-
+	
 	public Corso[] searchCorso(Connection conn, String query) {
 		// TODO Auto-generated method stub
 		return null;
-	}
-	
-	public Corso[] getCorsiAttivi(Connection conn) throws DAOException {
-		Corso[] corsi = null;
-		
-		try {
-			Statement stmt = conn.createStatement(
-                    ResultSet.TYPE_SCROLL_INSENSITIVE, 
-                    ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = stmt.executeQuery(SELECT_NOME_DATA);
-            rs.last();
-            corsi = new Corso[rs.getRow()];
-            rs.beforeFirst();
-            for(int i = 0; rs.next(); i++) {
-				Corso c = new Corso();
-				c.setCodCorso(rs.getLong(1));
-				c.setCodDocente(rs.getLong(2));
-				c.setNomeCorso(rs.getString(3));
-				c.setDataInizio(new java.util.Date(rs.getDate(4).getTime()));
-				c.setDataFine(new java.util.Date(rs.getDate(5).getTime()));
-				c.setCostoCorso(rs.getDouble(6));
-				c.setCommentiCorso(rs.getString(7));
-				c.setAulaCorso(rs.getString(8));
-				corsi[i] = c;
-			}
-			rs.close();		
-		} catch (SQLException sql) {
-			throw new DAOException(sql);
-		}
-		return corsi;
 	}
 }

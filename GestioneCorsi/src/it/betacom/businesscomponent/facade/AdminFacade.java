@@ -19,7 +19,7 @@ public class AdminFacade {
 	private AdminFacade() {
 	}
 	
-	public static AdminFacade getIstance() {  //singleton
+	public static AdminFacade getIstance() {
 		if(aF == null) {
 			aF = new AdminFacade();
 		}
@@ -69,11 +69,6 @@ public class AdminFacade {
 	public Corso[] getCorsi() throws ClassNotFoundException, DAOException, IOException {
 		corsoBC = new CorsoBC();
 		return corsoBC.getCorso();
-	}
-	
-	public Corso[] getCorsiAttiv() throws ClassNotFoundException, DAOException, IOException {
-		corsoBC = new CorsoBC();
-		return corsoBC.getCorsiAttivi();
 	}
 	
 	public void createCorsistaCorso(CorsistaCorso corsistaCorso) throws ClassNotFoundException, DAOException, IOException {

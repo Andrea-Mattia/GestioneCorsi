@@ -5,16 +5,14 @@
 <%@page import="it.betacom.businesscomponent.utilities.ReportUtility"%>
 <%@page import="java.util.Vector"%>
 <%@page import="it.betacom.businesscomponent.facade.AdminFacade"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" errorPage="error.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Report</title>
+<title>Statistiche</title>
 <%@ include file="cdn.html"%>
 <link rel="stylesheet" href="css/style.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
-
 </head>
 <body>
 	<header>
