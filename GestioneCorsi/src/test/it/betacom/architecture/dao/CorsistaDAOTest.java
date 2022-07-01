@@ -92,7 +92,7 @@ class CorsistaDAOTest {
 
 	@Test
 	@Order(4)
-	void testSearcCorsisti() {
+	void testSearchCorsisti() {
 
 		try {
 

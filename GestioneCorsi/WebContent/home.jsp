@@ -21,7 +21,7 @@
 			<a href="report.jsp">
 				<button type="submit" class="btn btn-default my-btn">Statistiche</button>
 			</a>
-			<a href="home.jsp">
+			<a href="eliminacorsi.jsp">
 				<button type="submit" class="btn btn-danger my-btn">Elimina<br>corsi</button>
 			</a>
 	</main>

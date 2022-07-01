@@ -107,6 +107,7 @@ public class CorsoDAO extends AdapterDAO<Corso> implements DAOConstants{
 			
 			rs.last();
 			corsi = new Corso[rs.getRow()];
+			rs.beforeFirst();
 			
 			for(int i = 0; rs.next(); i++) {
 				Corso c = new Corso();

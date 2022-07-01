@@ -38,6 +38,14 @@ class CorsoDAOTest {
 		assertNotNull(corso);
 	}
 	
+	@Test
+	void testGetAll() throws DAOException, ClassNotFoundException, IOException {
+		Corso[] corsi = CorsoDAO.getFactory().getAll(DBAccess.getConnection());
+		assertNotNull(corsi);
+		for(Corso c : corsi) {
+			System.out.println(c);
+		}
+	}
 	
 	@AfterEach
 	void tearDown() throws Exception {

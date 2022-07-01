@@ -76,4 +76,6 @@ public interface DAOConstants {
 			+ "where cc.cod_corsista = ?\r\n"
 			+ "order by c.datainizio";
 	
+	String SELECT_NOME_DATA = "select nomecorso, datafine from corso where datafine > sysdate";
+	
 }

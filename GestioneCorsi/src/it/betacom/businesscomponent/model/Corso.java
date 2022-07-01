@@ -15,13 +15,13 @@ public class Corso {
 	public long getCodCorso() {
 		return codCorso;
 	}
-	public void setCodCorso(int codCorso) {
+	public void setCodCorso(long codCorso) {
 		this.codCorso = codCorso;
 	}
 	public long getCodDocente() {
 		return codDocente;
 	}
-	public void setCodDocente(int codDocente) {
+	public void setCodDocente(long codDocente) {
 		this.codDocente = codDocente;
 	}
 	public String getNomeCorso() {

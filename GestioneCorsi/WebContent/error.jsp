@@ -8,7 +8,7 @@
 <head>
 <%@include file="cdn.html"%>
 <meta charset="ISO-8859-1">
-<title>Pagina acquisti</title>
+<title>Pagina errore</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
