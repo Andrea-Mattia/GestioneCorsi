@@ -17,7 +17,7 @@
 		} else {
 		%>
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="#"><span
+			<li><a href="home.jsp"><span
 					class="glyphicon glyphicon-user"></span>&nbsp;<%= admin %></a></li>
 			<li><a href="logout.jsp"><span
 					class="glyphicon glyphicon-off"></span>&nbsp;Logout</a></li>

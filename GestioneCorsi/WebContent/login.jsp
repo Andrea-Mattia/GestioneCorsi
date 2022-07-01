@@ -27,7 +27,7 @@
 							<span class="input-group-addon">
 								<i class="glyphicon glyphicon-log-in"></i>
 							</span>
-						<input type="text" name="username" placeholder="Codice Amministratore..." class="form-control">
+						<input type="number" name="username" placeholder="Codice Amministratore..." class="form-control">
 						</div>
 					</div>	
 				</div>

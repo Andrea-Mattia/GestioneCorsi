@@ -21,40 +21,41 @@ public class Controllo extends HttpServlet implements DAOConstants {
 			throws ServletException, IOException {
 		String codAdmin = request.getParameter("username");
 		String password = AlgoritmoMD5.convertiMD5(request.getParameter("password"));
-		
+
 		HttpSession session = request.getSession();
 		String adminpass = null;
 		String adminname = null;
-		if(codAdmin != null && password != null) {
+		if (codAdmin != null && password != null) {
+
 			try {
 				LoginUtility lU = new LoginUtility();
 				adminpass = lU.getAdminPass(codAdmin);
 				adminname = lU.getAdminName();
-				if(adminpass != null) {
-					if(adminpass.equals(password)) {
+				if (adminpass != null) {
+					if (adminpass.equals(password)) {
 						session.setAttribute("username", codAdmin);
 						session.setAttribute("nomeadmin", adminname);
 						response.sendRedirect("home.jsp");
 					} else {
 						response.sendRedirect("accessonegato.jsp");
 					}
-				}else {
-					if(session.getAttribute("try") == null) {
+				} else {
+					if (session.getAttribute("try") == null) {
 						session.setAttribute("try", "0");
 					}
-						String valid = (String) session.getAttribute("try");
-						int x = Integer.parseInt(valid);
-						if(x < 4) {
-							x++;
-							System.out.println(x);
-							session.setAttribute("try", String.valueOf(x));
-							response.sendRedirect("login.jsp");
-						} else {
-							System.out.println("Sono arrivato qui");
-							response.sendRedirect("accessonegato.jsp");
-						}
+					String valid = (String) session.getAttribute("try");
+					int x = Integer.parseInt(valid);
+					if (x < 4) {
+						x++;
+						System.out.println(x);
+						session.setAttribute("try", String.valueOf(x));
+						response.sendRedirect("login.jsp");
+					} else {
+						System.out.println("Sono arrivato qui");
+						response.sendRedirect("accessonegato.jsp");
+					}
 				}
-			}catch(Exception exc) {
+			} catch (Exception exc) {
 				exc.printStackTrace();
 				throw new ServletException(exc.getMessage());
 			}
