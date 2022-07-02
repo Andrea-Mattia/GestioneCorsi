@@ -37,7 +37,7 @@ if (request.getParameter("id") == null) {
 							<tr>
 								<th style="text-align: right;">Nome Corso</th>
 								<th style="text-align: right;">Data Inizio</th>
-								<th style="text-align: right;">Prezzo</th>
+								<th style="text-align: right;">Data Fine</th>
 							</tr>
 						</thead>
 						<tbody>

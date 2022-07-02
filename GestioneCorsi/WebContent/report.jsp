@@ -110,7 +110,7 @@
 				<div class="numeric-info">
 					<div>
 						<h2>Durata media dei corsi</h2>
-						<h3 id="nbr3"><%= rpu.getAvgDurata() %></h3>
+						<h3 id="nbr3"><%= rpu.getAvgDurata() %></h3>&nbsp;<strong>GIORNI</strong>
 					</div>
 				</div>
 				
