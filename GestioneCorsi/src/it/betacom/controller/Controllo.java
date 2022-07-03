@@ -37,8 +37,24 @@ public class Controllo extends HttpServlet implements DAOConstants {
 						session.setAttribute("nomeadmin", adminname);
 						response.sendRedirect("home.jsp");
 						session.setAttribute("try", "0");
-					
+
+					} else {
+						if (session.getAttribute("try") == null) {
+							session.setAttribute("try", "0");
+						}
+						String valid = (String) session.getAttribute("try");
+						int x = Integer.parseInt(valid);
+						if (x < 4) {
+							x++;
+							session.setAttribute("try", String.valueOf(x));
+							response.sendRedirect("login.jsp");
+						} else {
+							session.setAttribute("ban", "5");
+							response.sendRedirect("accessonegato.jsp");
+						}
+					}
 				} else {
+										
 					if (session.getAttribute("try") == null) {
 						session.setAttribute("try", "0");
 					}
@@ -53,7 +69,6 @@ public class Controllo extends HttpServlet implements DAOConstants {
 						response.sendRedirect("accessonegato.jsp");
 					}
 				}
-				}
 			} catch (Exception exc) {
 				exc.printStackTrace();
 				throw new ServletException(exc.getMessage());
@@ -61,5 +76,3 @@ public class Controllo extends HttpServlet implements DAOConstants {
 		}
 	}
 }
-	
-

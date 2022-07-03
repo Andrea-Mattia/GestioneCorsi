@@ -1,5 +1,7 @@
 <%
 	if(session.getAttribute("username") == null) {
+		if(session.getAttribute("ban") != null) 
+			response.sendRedirect("accessonegato.jsp");
 %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" errorPage="error.jsp"%>
 <!DOCTYPE html>
