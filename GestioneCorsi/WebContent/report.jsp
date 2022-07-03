@@ -68,7 +68,7 @@
 			<div class="section-info">
 				<div class="numeric-info">
 					<div>
-						<h2>Numero Corsisti</h2>
+						<h2>Numero Corsisti Attivi</h2>
 						<h3 id="nbr1"><%= rpu.getCorsistiNum() %></h3>
 					</div>
 					<div>

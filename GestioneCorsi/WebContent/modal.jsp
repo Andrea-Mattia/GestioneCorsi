@@ -57,7 +57,7 @@ if (request.getParameter("id") == null) {
 							%>
 
 							<tr>
-								<td><%=dati[1]%></td>
+								<td><%=dati[2]%></td>
 								<td><%=data_inizio1 %></td>
 								<td><%=data_fine1 %></td>
 							</tr>
